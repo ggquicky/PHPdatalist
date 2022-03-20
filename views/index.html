@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+<h1 class="mainHeader">User List</h1>
+<div class="menuOp">
+
+    <a class="linkBtn" href="/users">All Users</a>
+
+</div>
+
+<form class="formCSS" action="/users" method="post">
+
+    <label class="inputContainer">
+        First name
+        <input name="first_name" type="text">
+        {% if (errors['first_name'])  %}
+        <div class="error"> {{errors['first_name']}} </div>
+        {% endif %}
+    </label>
+    <label class="inputContainer">
+        Last name
+        <input name="last_name" type="text">
+        {% if (errors['last_name'])  %}
+        <div class="error">{{errors['last_name'] }}</div>
+        {% endif %}
+    </label>
+    <h3>Pick yours hobbies</h3>
+ <div class="checkBoxList">
+
+     <label >
+
+         <input
+                 {% if (user.hobbies.skate)  %}
+         checked
+         {% endif %}
+         name="hobbies[skate]"
+         type="checkbox"
+         value="Skate"
+         class="check-input"
+         >
+         Skate
+     </label>
+     <label>
+
+         <input {% if (user.hobbies.chess)  %}
+         checked
+         {% endif %}
+         name="hobbies[chess]"
+         type="checkbox"
+         value="Chess"
+         class="check-input"
+         >
+         Chess
+     </label>
+     <label>
+
+         <input {% if (user.hobbies.soccer)  %}
+                checked
+                {% endif %}
+                name="hobbies[soccer]"
+                type="checkbox"
+                value="Soccer"
+                class="check-input"
+         >
+         Soccer
+     </label>
+ </div>
+
+
+
+    <button class="linkBtn" type="submit">Save</button>
+</form>
+{% endblock %}
+

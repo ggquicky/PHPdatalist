@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block content %}
+<h1>Editing user</h1>
+<div class="menuOp">
+
+    <a class="linkBtn" href="/users"><i class="fa-solid fa-circle-left"></i> Back</a>
+
+</div>
+
+<form class="formCSS" class="" action="/users/{{id}}" method="post">
+    <label >
+        <input type="hidden" id="id" value="{{id}}">
+        <input type="hidden" name="_METHOD" value="PATCH">
+    </label>
+
+
+        <label class="inputContainer">
+            First name
+            <input name="first_name" type="text" value="{{user.first_name}}">
+            {% if (errors_Array.first_name)  %}
+            <div class="error">{{errors_Array.first_name}}</div>
+            {% endif %}
+        </label>
+        <label class="inputContainer">
+            Last name
+            <input name="last_name" type="text" value="{{user.last_name}}">
+            {% if (errors_Array.last_name)  %}
+            <div class="error">{{errors_Array.last_name}}</div>
+            {% endif %}
+        </label>
+        <h2>Hobbies</h2>
+        <div class="checkBoxList" >
+            <label class="checkboxBorder">
+
+                <input class="check-input" name="hobbies[skate]" type="checkbox" value="Skate" {% if (user.hobbies.skate)  %}
+                checked
+                {% endif %}>
+                Skate
+            </label>
+            <label>
+
+                <input {% if (user.hobbies.chess)  %}
+                checked
+                {% endif %}
+                name="hobbies[chess]"
+                type="checkbox"
+                value="Chess"
+                       class="check-input"
+                >
+                Chess
+            </label>
+            <label>
+
+                <input {% if (user.hobbies.soccer)  %}
+                       checked
+                       {% endif %}
+                       name="hobbies[soccer]"
+                       type="checkbox"
+                       value="Soccer"
+                       class="check-input"
+                >
+                Soccer
+            </label>
+        </div>
+
+
+
+    <button class="linkBtn locationSave" type="submit">Save</button>
+
+</form>
+<form action="/users/{{id}}" method="post">
+    <input name="id" type="hidden" value="{{id}}">
+    <button class="linkBtn locationDelete"  type="submit">Delete</button>
+    <input type="hidden" name="_METHOD" value="DELETE">
+</form>
+{% endblock %}

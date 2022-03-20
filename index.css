@@ -1,0 +1,150 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.mainClass{
+    padding: 60px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mainHeader{
+  padding: 16px;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 30px;
+    width: 600px;
+    align-items: center;
+}
+
+.btnSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+}
+.btn{
+    width: 70px;
+    height: 30px;
+
+}
+.locationSave{
+      position: absolute;
+      top: 320px;
+      left: 42%;
+
+  }
+.locationDelete{
+    position: absolute;
+    top: 320px;
+    right: 42%;
+}
+.columnsFormat{
+    width: max-content;
+    border: 2px solid gray;
+    height: 30px;
+    text-align: center;
+    border-collapse: collapse;
+}
+.BtnColumn{
+    width: 120px;
+    background-color: white;
+    justify-content: center;
+}
+
+.inputContainer{
+    height: 40px;
+}
+.headerFormat{
+    height: 30px;
+    width: 100px;
+    border: 2px solid gray;
+    background-color: lightskyblue;
+
+}
+
+.hobbies{
+    width: 200px;
+
+}
+
+.rowColor:nth-child(odd){
+    background-color: lightsteelblue;
+}
+.tableformat{
+    border:  2px solid gray;
+    border-collapse: collapse;
+
+}
+.linkFormat{
+    text-align: Center;
+
+}
+
+.menuOp{
+    padding: 16px;
+display: flex;
+    flex-direction: row;
+    align-content: center;
+    column-gap: 32px;
+}
+
+.menuHeader{
+    font-size: 16px;
+}
+.icon{
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+.linkBtn{
+    display: block;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+    border: 2px solid #3784e9;
+    text-decoration: none;
+    padding: 4px 2px;
+color: #3784e9;
+    cursor:pointer;
+    border-radius:5px;
+    background-color: white;
+}
+
+.linkBtn:hover{
+    background-color: #3784e9;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+.formCSS{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.checkBoxList{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+ height: 60px;
+    width: 300px;
+}
+
+.error{
+    color: red;
+}
+
+.check-input {
+    accent-color: #3784e9;
+    border: 1px solid #3784e9;
+    height: 16px; /* not needed */
+    width: 16px; /* not needed */
+}

@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+<h1>All USERS</h1>
+<div class="menuOp">
+    <a class="linkBtn" href="/users/sort"><i class="fa-solid fa-circle-left"></i> Sort by Name</a>
+    <a class="linkBtn" href="/"><i class="fa-solid fa-circle-left"></i> Back</a>
+
+</div>
+
+
+<table class="">
+    <thead>
+    <tr class="">
+        <th class="headerFormat">First name</th>
+        <th class="headerFormat">Last name</th>
+        <th class="headerFormat">Hobbies</th>
+<!--        <th class="headerFormat">Actions</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    {% for id,user in datatemp  %}
+    <tr class="rowColor">
+        <td class="columnsFormat"> {{user.first_name}}</td>
+        <td class="columnsFormat"> {{user.last_name}}</td>
+        <td class="columnsFormat hobbies"> {{ user.hobbies|join(' ') }} </td>
+<!--        <td class=" columnsFormat linkFormat">-->
+        <td class="BtnColumn" >
+          <a class="linkBtn" href="/users/{{id}}">Edit</a>
+        </td>
+    </tr>
+    {% endfor%}
+    </tbody>
+</table>
+{% endblock %}
